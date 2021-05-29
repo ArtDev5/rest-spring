@@ -35,7 +35,7 @@ public class FilmesController {
 	
 	@GetMapping("/recomendacao")
 	public Object filmeRecomendado() {
-		List<Filmes> recomendados = filmesRepository.getRecomendacao();
+		List<Filmes> recomendados = filmesRepository.findByAvaliacaoIsNull();
 		
 		int tamanho = recomendados.size();
 		
